@@ -28,10 +28,57 @@
       </div>
       <div class="media_section"></div>
     </main>
-    <div class="modal" role="group" tabindex="1"></div>
-
+    <div class="modal" id="contact_modal" role="group" tabindex="1">
+      <form>
+        <header>
+          <h2 id="titre" tabindex="2">Contactez-moi</h2>
+          <img
+            id="idFermer"
+            tabindex="8"
+            src="assets/icons/close.svg"
+            alt="Close Contact form"
+            onclick="closeModal()"
+          />
+        </header>
+        <label for="prenom"> Prénom </label>
+        <input
+          id="prenom"
+          type="text"
+          tabindex="3"
+          title="Entrer votre prénom"
+        />
+        <label for="nom"> Nom </label>
+        <input id="nom" type="text" tabindex="4" title="Entrer votre nom" />
+        <label for="email"> Email </label>
+        <input id="email" type="text" tabindex="5" title="Entrer votre email" />
+        <label for="message"> Votre Message </label>
+        <textarea
+          id="message"
+          rows="9"
+          tabindex="6"
+          title="Entrer votre message"
+        >
+        </textarea>
+        <button
+          class="contact_button"
+          title="Envoyer votre message"
+          tabindex="7"
+          onclick="return envoiMessage()"
+        >
+          Envoyer
+        </button>
+      </form>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
     <script src="scripts/utils/classes.js"></script>
-
+    <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/factories/lightBox.js"></script>
+    <script src="scripts/factories/tri.js"></script>
+    <script src="scripts/factories/media.js"></script>
     <script src="scripts/pages/photographer.js"></script>
   </body>
 </html>
