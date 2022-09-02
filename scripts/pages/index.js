@@ -1,6 +1,4 @@
-/* global photographerFactory, fetch, Photographe */
-/* eslint no-undef: "error" */
-
+//global photographerFactory, fetch, Photographe 
 let tphotographes = [];
 let photographers;
 

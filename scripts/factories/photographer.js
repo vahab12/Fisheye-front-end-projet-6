@@ -1,5 +1,4 @@
 function photographerFactory(data) {
-  // eslint-disable-line no-unused-vars
   const picture = `assets/photographers/${data.portrait}`;
 
   // Fonction permettant la création d'une carte photographe dans le DOM
@@ -12,6 +11,7 @@ function photographerFactory(data) {
     const tagLine = document.createElement('p');
     const villePays = document.createElement('h3');
     const prix = document.createElement('p');
+
     img.setAttribute('src', picture);
     img.setAttribute('alt', data.description);
     h2.textContent = data.nom;
