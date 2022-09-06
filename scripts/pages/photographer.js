@@ -21,6 +21,7 @@ async function getMedias(lesPhotographes) {
   let photographeCourant;
   let mediaCourant;
   for (let i = 0; i < lesPhotographes.photographers.length; i++) {
+    // eslint-disable-next-line no-undef
     photographeCourant = new Photographe();
     photographeCourant.id = lesPhotographes.photographers[i].id;
     photographeCourant.nom = lesPhotographes.photographers[i].name;
@@ -36,6 +37,7 @@ async function getMedias(lesPhotographes) {
   for (let k = 0; k < tabPhotographes.length; k++) {
     for (let j = 0; j < lesPhotographes.media.length; j++) {
       if (lesPhotographes.media[j].photographerId === tabPhotographes[k].id) {
+        // eslint-disable-next-line no-undef
         mediaCourant = new Media();
         mediaCourant.id = lesPhotographes.media[j].id;
         mediaCourant.photographeId = lesPhotographes.media[j].photographerId;
@@ -64,11 +66,14 @@ async function afficheMedia(tphotographes) {
   const photographeHeader = document.querySelector('.photograph-header');
   tphotographes.forEach((photographer) => {
     if (photographer.id === parseInt(id)) {
+      // eslint-disable-next-line no-undef
       const photographe = photographeEnteteFactory(photographer);
       const photographeTete = photographe.getPhotographeEntete();
       const photographeImage = photographe.getPhotographeImage();
+      // eslint-disable-next-line no-undef
       const photographeEncart = encart(photographer);
       const photographeGetEncart = photographeEncart.getEncart();
+      // eslint-disable-next-line no-undef
       const triMedia = tri(photographer);
       const tabPopularite = triMedia.trier('Popularité');
       const label = triMedia.getLabelTri();
@@ -90,6 +95,7 @@ async function afficheMedia(tphotographes) {
       photographeHeader.appendChild(photographeImage);
       photographer.tMedia = tabPopularite;
       photographer.tMedia.forEach((media) => {
+        // eslint-disable-next-line no-undef
         const mediaModel = mediaFactory(media);
         const userCardDOM = mediaModel.getMediaCardDOM();
         mediasSection.appendChild(userCardDOM);

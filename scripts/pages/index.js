@@ -1,4 +1,4 @@
-//global photographerFactory, fetch, Photographe 
+//global photographerFactory, fetch, Photographe
 let tphotographes = [];
 let photographers;
 
@@ -6,6 +6,7 @@ let photographers;
 function getPhotographers(photographers) {
   let photographeCourant;
   for (let i = 0; i < photographers.photographers.length; i++) {
+    // eslint-disable-next-line no-undef
     photographeCourant = new Photographe();
     photographeCourant.id = photographers.photographers[i].id;
     photographeCourant.nom = photographers.photographers[i].name;
@@ -24,6 +25,7 @@ function getPhotographers(photographers) {
 function displayData(tphotographes) {
   const photographersSection = document.querySelector('.photographer_section');
   for (let i = 0; i < tphotographes.length; i++) {
+    // eslint-disable-next-line no-undef
     const photographerModel = photographerFactory(tphotographes[i]);
     const userCardDOM = photographerModel.getUserCardDOM(i);
     photographersSection.appendChild(userCardDOM);

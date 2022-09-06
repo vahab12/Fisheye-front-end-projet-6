@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function tri(data) {
   // Fonction permettant de prendre en compte un type de tri et de faire le tri puis renvoyer le tableau trié
   function trier(type) {
@@ -60,6 +61,9 @@ function tri(data) {
     select.id = 'selectBox';
     select.classList.add('s-hidden');
 
+    select.setAttribute('aria-haspopup', 'listbox');
+    select.setAttribute('aria-lable', 'trie des médias');
+    select.setAttribute('aria-expanded', 'true');
     select.appendChild(popularite);
     select.appendChild(date);
     select.appendChild(titre);
@@ -99,6 +103,7 @@ function tri(data) {
     elmtSelect.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') elmtSelect.click();
     });
+    //let $;
     elmtSelect.addEventListener('click', function (e) {
       e.stopPropagation();
       if (options.style.display === 'none') {
@@ -128,6 +133,7 @@ function tri(data) {
         if (mediasSection.children.length === 0) {
           let nbEnPlus = 0;
           for (let e = 0; e < data.tMedia.length; e++) {
+            // eslint-disable-next-line no-undef
             const mediaModel = mediaFactory(data.tMedia[e]);
             const userCardDOM = mediaModel.getMediaCardDOM(e + nbEnPlus);
             mediasSection.appendChild(userCardDOM);
@@ -149,6 +155,7 @@ function tri(data) {
               }
             });
             if (j === listItems.length - 1) {
+              // eslint-disable-next-line no-unused-vars
               listItems[j].addEventListener('focusout', (e) => {
                 elmtSelect.click();
               });

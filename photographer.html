@@ -16,13 +16,23 @@
   </head>
   <body>
     <header>
-      <a href="index.html" tabindex="1">
-        <img src="assets/images/logo.png" alt="Fisheye Home page" class="logo"
-      /></a>
+      <a href="index.html" tabindex="1" aria-label="Fisheye Home page">
+        <img
+          src="assets/images/logo.png"
+          class="logo"
+          alt="Fisheye Home Page"
+        />
+      </a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button tabindex="4" class="contact_button" onclick="displayModal()">
+        <button
+          aria-label="Contactez le photographe"
+          tabindex="4"
+          class="contact_button"
+          onclick="displayModal()"
+          alt="button de contact"
+        >
           Contactez-moi
         </button>
       </div>
@@ -33,6 +43,7 @@
         <header>
           <h2 id="titre" tabindex="2">Contactez-moi</h2>
           <img
+            aria-label="Fermer le modale"
             id="idFermer"
             tabindex="8"
             src="assets/icons/close.svg"
@@ -40,30 +51,56 @@
             onclick="closeModal()"
           />
         </header>
-        <label for="prenom"> Prénom </label>
+        <label aria-label="entrer votre prénom" for="prenom"> Prénom </label>
         <input
+          aria-labelledby="prenom"
           id="prenom"
           type="text"
           tabindex="3"
           title="Entrer votre prénom"
+          aria-describedby="format-firstName"
+          aria-invalid="false"
         />
-        <label for="nom"> Nom </label>
-        <input id="nom" type="text" tabindex="4" title="Entrer votre nom" />
-        <label for="email"> Email </label>
-        <input id="email" type="text" tabindex="5" title="Entrer votre email" />
-        <label for="message"> Votre Message </label>
+        <label aria-label="entrer votre nom" for="nom"> Nom </label>
+        <input
+          aria-labelledby="nom"
+          id="nom"
+          type="text"
+          tabindex="4"
+          title="Entrer votre nom"
+          aria-describedby="format-lastName"
+          aria-invalid="false"
+        />
+        <label aria-label="entrer votre email" for="email"> Email </label>
+        <input
+          aria-labelledby="emailInput"
+          id="email"
+          type="text"
+          tabindex="5"
+          title="Entrer votre email"
+          aria-describedby="format-email"
+          aria-invalid="false"
+        />
+        <label aria-label="entrer votre message" for="message">
+          Votre Message
+        </label>
         <textarea
+          aria-labelledby="messageInput"
           id="message"
           rows="9"
           tabindex="6"
           title="Entrer votre message"
+          aria-describedby="format-message"
+          aria-invalid="false"
         >
         </textarea>
         <button
+          aria-label="envoyer votre message"
           class="contact_button"
           title="Envoyer votre message"
           tabindex="7"
           onclick="return envoiMessage()"
+          alt="button pour envoyer le message"
         >
           Envoyer
         </button>

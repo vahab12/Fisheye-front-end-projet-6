@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 function lightboxFactory(data) {
   const picture = `assets/images/${data.photographeId}/${data.image}`;
   const lienVideo = `assets/images/${data.photographeId}/${data.video}`;
@@ -36,6 +37,19 @@ function lightboxFactory(data) {
     const video = document.createElement('video');
     const source = document.createElement('source');
     const photos = document.querySelectorAll('.media > a');
+
+    let photoSuivante;
+    let titreSuivant;
+    let photoSuivanteId;
+    let descriptionSuivante;
+    let photoPrecedente;
+    let titrePrecedent;
+    let photoPrecedenteId;
+    let descriptionPrecedente;
+    let indiceSuivant;
+    let indicePrecedent;
+    let k;
+    let bVideo = false;
 
     for (let j = 0; j < photos.length; j++) {
       if (parseInt(photos[j].firstChild.classList[0]) === data.id) {
@@ -190,7 +204,6 @@ function lightboxFactory(data) {
   function getLightbox() {
     const fig = document.createElement('figure');
     const figCaption = document.createElement('figcaption');
-
     const image = document.createElement('img');
     const video = document.createElement('video');
     const source = document.createElement('source');

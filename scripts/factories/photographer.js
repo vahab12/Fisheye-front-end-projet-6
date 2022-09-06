@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function photographerFactory(data) {
   const picture = `assets/photographers/${data.portrait}`;
 
@@ -12,6 +13,7 @@ function photographerFactory(data) {
     const villePays = document.createElement('h3');
     const prix = document.createElement('p');
 
+    lien.setAttribute('aria-label', data.nom);
     img.setAttribute('src', picture);
     img.setAttribute('alt', data.description);
     h2.textContent = data.nom;

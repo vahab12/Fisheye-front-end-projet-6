@@ -1,9 +1,10 @@
 //Fonction pour afficher le modale
+/*
 function displayModal() {
   const modal = document.getElementById('contact_modal');
   modal.style.display = 'block';
 }
-
+*/
 // global fetch, Photographe
 class Erreur {
   constructor(id, message, presenceErreur, idErreur, typeErreur) {
@@ -67,6 +68,7 @@ tErreurs.push(eNom);
 tErreurs.push(eMail);
 tErreurs.push(eMessage);
 
+// eslint-disable-next-line no-unused-vars
 function displayModal() {
   const lienSite = window.location.href;
   const url = new URL(lienSite);
@@ -77,6 +79,7 @@ function displayModal() {
   }
   const bFermer = document.getElementsByClassName('contact_button');
   bFermer[1].style.marginTop = '25px';
+  main.style.display = 'none';
   logo[0].style.display = 'none';
   modal[0].style.display = 'flex';
 
@@ -106,6 +109,7 @@ function displayModal() {
     let photographeCourant;
     for (let i = 0; i < fichPhotographes.photographers.length; i++) {
       if (parseInt(fichPhotographes.photographers[i].id) === parseInt(id)) {
+        // eslint-disable-next-line no-undef
         photographeCourant = new Photographe();
         photographeCourant.id = fichPhotographes.photographers[i].id;
         photographeCourant.nom = fichPhotographes.photographers[i].name;
@@ -253,6 +257,7 @@ function videFormulaire() {
 
 /*Fonction effectuant les vérifications nécessaires du formulaire
 ainsi qu'un affichage des données si ces dernières sont correctes*/
+// eslint-disable-next-line no-unused-vars
 function envoiMessage() {
   const form = document.getElementsByTagName('form');
   form[0].action = 'photographer.html?id=' + photographeC.id;

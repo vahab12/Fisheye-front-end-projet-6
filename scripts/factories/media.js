@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 function photographeEnteteFactory(data) {
   const picture = `assets/photographers/${data.portrait}`;
 
@@ -8,6 +9,7 @@ function photographeEnteteFactory(data) {
     const infoPhotographe = document.createElement('div');
     const villePays = document.createElement('p');
     const tagLine = document.createElement('p');
+
     h1.textContent = data.nom;
     h1.tabIndex = '2';
     villePays.classList.add('ville');
@@ -38,7 +40,7 @@ function encart(data) {
   function getEncart() {
     const article = document.createElement('article');
     const nbLikes = document.createElement('p');
-    const like = document.createElement('span');
+    //const like = document.createElement('span');
     const tarif = document.createElement('p');
 
     article.classList.add('encart');
@@ -47,8 +49,8 @@ function encart(data) {
     article.appendChild(nbLikes);
     article.appendChild(tarif);
     tarif.textContent = data.prix + '€ / jour';
-    nbLikes.tabIndex = '6';
-    tarif.tabIndex = '6';
+    //nbLikes.tabIndex = '6';
+    //tarif.tabIndex = '6';
     return article;
   }
   return { data, getEncart };
@@ -57,6 +59,7 @@ function encart(data) {
 function mediaFactory(data) {
   const picture = `assets/images/${data.photographeId}/${data.image}`;
   const lienVideo = `assets/images/${data.photographeId}/${data.video}`;
+  // eslint-disable-next-line no-undef
   const lightBox = lightboxFactory(data);
 
   // Fonction créer dans le DOM un media
@@ -77,7 +80,7 @@ function mediaFactory(data) {
     article.classList.add('media');
     h2.textContent = data.titre;
     h2.classList.add(data.id);
-    h2.tabIndex = nbMedia + 11;
+    //  h2.tabIndex = nbMedia + 11;
     video.tabIndex = nbMedia + 10;
     img.tabIndex = nbMedia + 10;
 
@@ -113,11 +116,13 @@ function mediaFactory(data) {
       video.height = 300;
       video.style.objectFit = 'cover';
       video.preload = 'metadata';
+      video.setAttribute('aria-label', data.description);
       video.appendChild(source);
       video.classList.add(data.id);
       lien.appendChild(video);
       video.setAttribute('alt', data.description);
     } else {
+      img.setAttribute('aria-label', data.description);
       img.setAttribute('src', picture);
       img.setAttribute('alt', data.description);
       img.classList.add(data.id);
@@ -129,11 +134,11 @@ function mediaFactory(data) {
     divMedia.appendChild(likes);
     article.appendChild(divMedia);
 
-    //like par la navigation du clavier
+    //like avec la navigation du clavier
     likes.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') icone.click();
     });
-    icone.setAttribute('aria-label', `like`);
+    icone.setAttribute('aria-label', `likes`);
 
     icone.addEventListener('click', function () {
       data.likes++;

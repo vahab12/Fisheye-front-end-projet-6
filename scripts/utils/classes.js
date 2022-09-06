@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 class Photographe {
   constructor(id, nom, ville, pays, tagLine, prix, portrait, description) {
     this.id = id;
@@ -13,6 +14,7 @@ class Photographe {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 class Media {
   constructor(
     id,
