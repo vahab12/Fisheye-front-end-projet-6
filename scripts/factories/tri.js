@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 function tri(data) {
-  // Fonction permettant de prendre en compte un type de tri et de faire le tri puis renvoyer le tableau trié
+  /*Fonction permettant de prendre en compte un type de tri et 
+  de faire le tri puis renvoyer le tableau trié*/
   function trier(type) {
     const sortByMapped = (map, compareFn) => (a, b) =>
       compareFn(map(a), map(b));
@@ -47,6 +48,7 @@ function tri(data) {
     const popularite = document.createElement('option');
     const date = document.createElement('option');
     const titre = document.createElement('option');
+
     ensembleTri.classList.add('select');
     ensembleTri.appendChild(select);
     popularite.textContent = 'Popularité';
@@ -103,7 +105,7 @@ function tri(data) {
     elmtSelect.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') elmtSelect.click();
     });
-    //let $;
+
     elmtSelect.addEventListener('click', function (e) {
       e.stopPropagation();
       if (options.style.display === 'none') {
@@ -115,6 +117,7 @@ function tri(data) {
         icone.style.transform = 'rotate(0deg)';
       }
     });
+
     const listItems = document.getElementsByTagName('li');
     for (let i = 0; i < listItems.length; i++) {
       listItems[i].addEventListener('click', function (e) {

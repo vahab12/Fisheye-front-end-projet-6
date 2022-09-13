@@ -34,6 +34,7 @@ async function getMedias(lesPhotographes) {
       lesPhotographes.photographers[i].description;
     tabPhotographes.push(photographeCourant);
   }
+
   for (let k = 0; k < tabPhotographes.length; k++) {
     for (let j = 0; j < lesPhotographes.media.length; j++) {
       if (lesPhotographes.media[j].photographerId === tabPhotographes[k].id) {
@@ -64,6 +65,7 @@ async function getMedias(lesPhotographes) {
 async function afficheMedia(tphotographes) {
   const mediasSection = document.querySelector('.media_section');
   const photographeHeader = document.querySelector('.photograph-header');
+  //?????
   tphotographes.forEach((photographer) => {
     if (photographer.id === parseInt(id)) {
       // eslint-disable-next-line no-undef

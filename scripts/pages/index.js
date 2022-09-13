@@ -5,6 +5,7 @@ let photographers;
 // Fonction permettant de stocker dans un tableau toutes les infos de chaque photographe
 function getPhotographers(photographers) {
   let photographeCourant;
+
   for (let i = 0; i < photographers.photographers.length; i++) {
     // eslint-disable-next-line no-undef
     photographeCourant = new Photographe();
@@ -39,6 +40,7 @@ const getDonnees = async function (photographers) {
   tphotographes = getPhotographers(photographers);
 };
 
+//la fonction async que returne promise
 async function init() {
   await getDonnees(photographers);
   displayData(tphotographes);

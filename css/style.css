@@ -251,7 +251,7 @@ form .erreur {
   justify-content: space-between;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 128px;
   bottom: 0;
   left: 0;
   background-color: #901c1c;
@@ -269,7 +269,7 @@ form .erreur {
   display: none;
   position: absolute;
   top: 152%;
-  right: 0;
+  right: 128px;
   left: 0;
   z-index: 999;
   margin: 0 0;

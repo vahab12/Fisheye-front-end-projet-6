@@ -1,10 +1,3 @@
-//Fonction pour afficher le modale
-/*
-function displayModal() {
-  const modal = document.getElementById('contact_modal');
-  modal.style.display = 'block';
-}
-*/
 // global fetch, Photographe
 class Erreur {
   constructor(id, message, presenceErreur, idErreur, typeErreur) {
@@ -68,6 +61,7 @@ tErreurs.push(eNom);
 tErreurs.push(eMail);
 tErreurs.push(eMessage);
 
+//Fonction pour afficher le modale
 // eslint-disable-next-line no-unused-vars
 function displayModal() {
   const lienSite = window.location.href;
@@ -77,6 +71,7 @@ function displayModal() {
   if (searchParam.has('id')) {
     id = searchParam.get('id');
   }
+
   const bFermer = document.getElementsByClassName('contact_button');
   bFermer[1].style.marginTop = '25px';
   main.style.display = 'none';

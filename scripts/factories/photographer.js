@@ -36,5 +36,10 @@ function photographerFactory(data) {
     article.appendChild(articleInfo);
     return article;
   }
-  return { picture, data, getUserCardDOM };
+
+  return {
+    picture,
+    data,
+    getUserCardDOM,
+  };
 }

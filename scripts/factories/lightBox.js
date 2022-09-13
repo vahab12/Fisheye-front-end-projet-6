@@ -61,6 +61,7 @@ function lightboxFactory(data) {
         j = k;
 
         switch (j) {
+          //case -1
           case photos.length - 1:
             if (bSuivant && photos[0].firstChild.tagName === 'VIDEO') {
               bVideo = true;
@@ -89,6 +90,7 @@ function lightboxFactory(data) {
             photoPrecedenteId = photos[indicePrecedent].firstChild.classList[0];
             break;
 
+          //Case 0
           case 0:
             titrePrecedent =
               photos[photos.length - 1].parentElement.lastChild.firstChild
@@ -122,6 +124,7 @@ function lightboxFactory(data) {
             descriptionSuivante = photos[indiceSuivant].firstChild.alt;
             break;
 
+          //default
           default:
             titreSuivant =
               photos[indiceSuivant].parentElement.lastChild.firstChild
@@ -254,6 +257,7 @@ function lightboxFactory(data) {
     iconeFD.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') iconeFD.click();
     });
+    
     iconeFG.addEventListener('keydown', (e) => {
       if (e.code === 'Enter') iconeFG.click();
     });
